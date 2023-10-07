@@ -1,4 +1,4 @@
-name: github pages
+name: build only
 
 on:
   push:
@@ -23,11 +23,3 @@ jobs:
       - name: build
         working-directory: ./
         run: yarn build
-
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          cname: app-demo.aya-eiya.work
-          enable_jekyll: false
